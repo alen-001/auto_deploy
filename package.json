@@ -7,7 +7,10 @@
     "worker": "pnpm --filter worker dev",
     "build": "pnpm -r build",
     "dev": "pnpm -r --parallel dev",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "db:generate": "drizzle-kit generate --config=packages/types/drizzle.config.ts",
+    "db:push": "drizzle-kit push --config=packages/types/drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config=packages/types/drizzle.config.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +18,14 @@
   "packageManager": "pnpm@10.11.0",
   "devDependencies": {
     "@types/node": "^25.9.1",
-    "typescript": "^6.0.3",
-    "ts-node-dev": "^2.0.0"
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.31.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "^0.45.2",
+    "pg": "^8.21.0"
   }
 }
